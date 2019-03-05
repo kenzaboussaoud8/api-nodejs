@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Welcome to Zoubida!</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5bc0de !important">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="index.html">Zoubida Association</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.html">Accueil
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="membres.html">Membres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Mon profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact" href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <!-- Links -->
+
+            <form class="form-inline">
+                <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Rechercher">
+                </div>
+            </form>
+            <button id="logout"><i class="fa fa-sign-out fa-10x" aria-hidden="true"></i> </button>
+        </div>
+        <!-- Collapsible content -->
+    </nav>
+    <!--/.Navbar-->
+    <!--Title-->
+    <div class="card">
+        <div class="card-body">
+            Voici la liste des membres de notre association. Rejoignez nous!
+        </div>
+    </div>
+    <!--/Title-->
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Sexe</th>
+                <th>Email</th>
+                <th>Date de naissance</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+
+<!-- Récupération de la liste des utilisateurs -->
+<script>
+    $(document).ready(function () {
+        // on récupère le token depuis le localStorage
+        let tk = localStorage.getItem("token");
+        $.ajax({
+            url: 'http://localhost:8080/users/' + tk,
+            type: 'GET',
+        }).done(function (dt) {
+            $("table > tbody").html("")
+            for (var i = 0; i < dt.users.length; i++) {
+                let user_data = dt.users[i];
+                $("table > tbody").append(" <tr> <td class='id'> " + user_data._id +
+                    " </td> <td> " + user_data.firstname + " </td> <td> " + user_data.lastname +
+                    " </td><td> " + user_data.sexe +
+                    " </td> <td> " + user_data.email + " </td> <td> " +
+                    dateBDDToDateForm(user_data.date_naissance) + " </td><td> " +
+                    dateBDDToDateForm(user_data.createdAt) + "</td></tr>")
+            }
+        })
+    });
+
+</script>
+
+<!-- Script de déconnexion -->
+<script>
+    (function () {
+        $("#logout").click(function (e) {
+            // on récupère le token depuis le localStorage
+            let tk = localStorage.getItem("token");
+            e.preventDefault();
+            $.ajax({
+                url: 'http://localhost:8080/user/' + tk,
+                type: 'DELETE',
+                data: {
+                    token: tk
+                }
+            }).done(function (data) {
+                console.log('Logged out!')
+                window.location.href = 'index.html';
+            })
+        })
+    }
+    )();
+</script>
+
+<script>
+    function dateBDDToDateForm(date) {
+        return date.split('T')[0]
+    }
+</script>
+
+</html>

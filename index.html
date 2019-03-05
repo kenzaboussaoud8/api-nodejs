@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Welcome to Zoubida!</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<style type="text/css">
+    p.emailErr {
+        color: red;
+    }
+</style>
+
+<body>
+
+    <!-- Register & login forms -->
+    <div class="card-deck">
+        <div class="card">
+            <h5 class="card-header info-color white-text text-center py-4">
+                <strong>Login</strong>
+            </h5>
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
+
+                <!-- Login Form -->
+                <form id="form-login" class="needs-validation" novalidate>
+                    <div class="form-row">
+                        <div class="md-form">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="emaillogin" min="10" max="100" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email adress.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="md-form">
+                            <label for="validationCustom012">Password</label>
+                            <input type="password" class="form-control" id="passwordlogin" placeholder="password"
+                                required>
+                        </div>
+                        <div class="invalid-feedback">
+                            Please enter a valid email adress.
+                        </div>
+                    </div>
+                    <!-- Sign up button -->
+                    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Login
+                    </button>
+                </form>
+                <!-- End Login Form -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h5 class="card-header info-color white-text text-center py-4">
+                <strong>Register</strong>
+            </h5>
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
+                <!-- Register Form -->
+                <form id="form-register" class="needs-validation" novalidate style="color: #757575;">
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- First name -->
+                            <div class="md-form">
+                                <input type="text" id="firstname" class="form-control">
+                                <label class="form-check-label" for="firstname">First name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Last name -->
+                            <div class="md-form">
+                                <input type="text" id="lastname" class="form-control">
+                                <label for="lastname">Last name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sex -->
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="sexeF" name="sexe" value="Féminin">
+                        <label class="form-check-label" for="materialInline1">Féminin</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                    </div>
+                    <input type="radio" class="form-check-input" id="sexeM" name="sexe" value="Masculin">
+                    <label class="form-check-label" for="materialInline2">Masculin</label>
+            </div>
+            <!-- E-mail -->
+            <div class="md-form mt-0">
+                <input type="email" id="email" class="form-control">
+                <label class="form-check-label" for="email">E-mail</label>
+            </div>
+
+            <!-- Password -->
+            <div class="md-form">
+                <input type="password" id="password" class="form-control">
+                <label class="form-check-label" for="materialRegisterFormPassword">Password</label>
+                <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                    At least 8 characters and 1 digit
+                </small>
+            </div>
+
+            <!-- Birthdate -->
+            <div class="md-form">
+                <input type="date" id="birthdate" class="form-control">
+                <label class="form-check-label" for="birthdate"></label>
+                <small id="birthdate" class="form-text text-muted mb-4">
+                    Format JJ/MM/YYYY
+                </small>
+            </div>
+
+
+            <!-- Register button -->
+            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Register
+            </button>
+
+            </form>
+            <!-- End Register Form -->
+
+        </div>
+
+    </div>
+
+    <div class="homepage" id="add" style="display: none">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5bc0de !important">
+
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="index.html">Zoubida Association</a>
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Accueil
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="membres" href="membres.html">Membres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Mon profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact" href="contact.html">Contact</a>
+                    </li>
+
+
+                </ul>
+                <!-- Links -->
+
+                <form class="form-inline">
+                    <div class="md-form my-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Rechercher">
+                    </div>
+                </form>
+                <button id="logout"><i class="fa fa-sign-out fa-10x" aria-hidden="true"></i> </button>
+            </div>
+            <!-- Collapsible content -->
+        </nav>
+        <!--/.Navbar-->
+
+        <!-- Grid column -->
+        <div class="card-group">
+
+            <!--Card-->
+            <div class="card">
+
+                <!--Card image-->
+                <div class="view">
+                    <img src="img/greenaple.jpg" class="card-img-top" alt="photo">
+                </div>
+
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title">Pour une bonne nutrition</h4>
+                    <!--Text-->
+                    <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                        veritatis et
+                        quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas.</p>
+                </div>
+
+            </div>
+            <!--/.Card-->
+
+            <!--Card-->
+            <div class="card">
+
+                <!--Card image-->
+                <div class="view">
+                    <img src="img/greenaple.jpg" class="card-img-top" alt="photo">
+                </div>
+
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title">Pour une bonne nutrition</h4>
+                    <!--Text-->
+                    <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                        veritatis et
+                        quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas.</p>
+                </div>
+
+            </div>
+            <!--/.Card-->
+
+        </div>
+        <!-- Grid column -->
+    </div>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- SCRIPTS -->
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+    <!-- Login -->
+    <script>
+        (function () {
+            $("#form-login").submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: 'http://localhost:8080/login',
+                    type: 'POST',
+                    withCredentials: true,
+                    data: {
+                        email: $("input[id='emaillogin']").val(),
+                        password: $("input[id='passwordlogin']").val(),
+                    }
+                }).done(function (res) {
+                    //token recupéré ici, localStorage
+                    localStorage.setItem("token", res.tokens.token);
+                    $(".card-deck").css("display", "none");
+                    $("#add").css("display", "block");
+                })
+            })
+        }
+        )();
+    </script>
+    <!-- Register -->
+    <script>
+        (function () {
+            $("#form-register").submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: 'http://localhost:8080/register',
+                    type: 'POST',
+
+                    data: {
+                        password: $("input[id='password']").val(),
+                        firstname: $("input[id='firstname']").val(),
+                        lastname: $("input[id='lastname']").val(),
+                        email: $("input[id='email']").val(),
+                        sexe: $("input[name='sexe']:checked").val(),
+                        date_naissance: $("input[id='birthdate']").val(),
+                    }
+                }).done(function (data) {
+                    console.log('You are registered')
+                    localStorage.setItem("token", res.tokens.token);
+                    $(".card-deck").css("display", "none")
+                    $("#add").css("display", "block");
+                })
+            })
+        }
+        )();
+    </script>
+
+    <!-- Si le user a déjà un token, on le log automatiquement -->
+    <script>
+        $(document).ready(function () {
+            // on récupère le token depuis le localStorage
+            let tk = localStorage.getItem("token");
+            $.ajax({
+                url: 'http://localhost:8080/user/' + tk,
+                type: 'GET',
+            }).done(function (dt) {
+                console.log("You've been automatically logged")
+                $(".card-deck").css("display", "none")
+                $("#add").css("display", "block");
+            })
+        });
+    </script>
+    <!-- Script de déconnexion -->
+    <script>
+        (function () {
+            $("#logout").click(function (e) {
+                // on récupère le token depuis le localStorage
+                let tk = localStorage.getItem("token");
+                e.preventDefault();
+                $.ajax({
+                    url: 'http://localhost:8080/user/' + tk,
+                    type: 'DELETE',
+                    data: {
+                        token: tk
+                    }
+                }).done(function (data) {
+                    console.log('Logged out!')
+                    window.location.href = 'index.html';
+                })
+            })
+        }
+        )();
+    </script>
+</body>
+
+</html>

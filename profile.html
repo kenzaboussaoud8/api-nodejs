@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Welcome to Zoubida!</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5bc0de !important">
+     <!-- Navbar brand -->
+        <a class="navbar-brand" href="index.html">Zoubida Association</a>
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.html">Accueil
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="membres" href="membres.html">Membres</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="profile.html">Mon profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact" href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <!-- Links -->
+
+            <form class="form-inline">
+                <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Rechercher">
+                </div>
+            </form>
+            <button id="logout"><i class="fa fa-sign-out fa-10x" aria-hidden="true"></i> </button>
+        </div>
+        <!-- Collapsible content -->
+    </nav>
+    <!--/.Navbar-->
+    <div class="container">
+        <hr>
+        <div class="row">
+            <!-- edit form column -->
+            <div class="col-md-9 personal-info">
+                <div>
+                    <h3> Modifier mes informations personnelles</h3>
+                </div>
+                <form id="form-modify" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Prénom</label>
+                        <div class="col-lg-8">
+                            <input id="firstname" class="form-control" type="text" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Nom</label>
+                        <div class="col-lg-8">
+                            <input id="lastname" class="form-control" type="text" value="">
+                        </div>
+                    </div>
+                    <!--sex -->
+                    <div class="form-group">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="sexeF" name="sexe" value="féminin">
+                            <label class="form-check-label" for="materialInline1">Féminin</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                        </div>
+                        <input type="radio" class="form-check-input" id="sexeM" name="sexe" value="masculin">
+                        <label class="form-check-label" for="materialInline2">Masculin</label>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Date de naissance</label>
+                        <div class="col-md-8">
+                            <input type="date" id="birthdate" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Date d'inscription</label>
+                        <div class="col-md-8">
+                            <input readonly="readonly" id="date_inscription" type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="">
+                        <button class="btn btn-primary" style="background-color: #5bc0de !important" data-toggle="modal"
+                            data-target="#exampleModal" type="submit">Confirmer</button>
+
+                    </div>
+
+                </form>
+                <div>
+                    <h3> Modifier mon mot de passe</h3>
+                </div>
+
+                <form id="form-modify-password" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Ancien mot de passe</label>
+                        <div class="col-lg-8">
+                            <input id="oldpassword" class="form-control" type="password" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Nouveau mot de passe</label>
+                        <div class="col-lg-8">
+                            <input id="newpassword" class="form-control" type="password" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Confirmer nouveau mot de passe</label>
+                        <div class="col-lg-8">
+                            <input id="confirmpassword" class="form-control" type="password" value="">
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <button class="btn btn-primary" style="background-color: #5bc0de !important" data-toggle="modal"
+                            data-target="#exampleModal" type="submit">Confirmer</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- Modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Changements effectuées</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</body>
+
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+
+<!-- Récupérer les données de l'utilisateur connecté-->
+<script>
+    $(document).ready(function () {
+        // on récupère le token depuis le localStorage
+        let tk = localStorage.getItem("token");
+        $.ajax({
+            url: 'http://localhost:8080/user/' + tk,
+            type: 'GET',
+        }).done(function (dt) {
+            document.getElementById('firstname').value = dt.user.firstname;
+            document.getElementById('lastname').value = dt.user.lastname;
+            document.getElementById('birthdate').value = dateBDDToDateForm(dt.user.date_naissance);
+            document.getElementById('date_inscription').value = dateBDDToDateForm(dt.user.createdAt);
+            $("input[name=sexe][value=" + dt.user.sexe + "]").prop('checked', true);
+
+        })
+    });
+
+</script>
+
+<!-- Modifier les données de l'utilisateur connecté-->
+<script>
+    (function () {
+        $("#form-modify").submit(function (e) {
+            $('#myAlert').modal();
+            // on récupère le token depuis le localStorage
+            let tk = localStorage.getItem("token");
+            e.preventDefault();
+            $.ajax({
+                url: 'http://localhost:8080/user/' + tk,
+                type: 'PUT',
+                data: {
+                    firstname: $("input[id='firstname']").val(),
+                    lastname: $("input[id='lastname']").val(),
+                    sexe: $("input[name='sexe']:checked").val(),
+                    date_naissance: $("input[id='birthdate']").val(),
+                }
+            }).done(function (data) {
+                console.log('Info Modified!')
+            })
+        })
+    }
+    )();
+</script>
+<!-- Script de modification du mot de passe de l'utilisateur connecté -->
+<script>
+    (function () {
+        $("#form-modify-password").submit(function (e) {
+            $('#myAlert').modal();
+            // on récupère le token depuis le localStorage
+            let tk = localStorage.getItem("token");
+            e.preventDefault();
+            $.ajax({
+                url: 'http://localhost:8080/user/mdp/' + tk,
+                type: 'PUT',
+                data: {
+                    oldPassword: $("input[id='oldpassword']").val(),
+                    newPassword: $("input[id='newpassword']").val(),
+                    confirmPassword: $("input[id='confirmpassword']").val(),
+                    token: tk
+                }
+            }).done(function (data) {
+                console.log('Password Modified!')
+            })
+        })
+    }
+    )();  
+</script>
+
+<!-- Script de déconnexion -->
+<script>
+    (function () {
+        $("#logout").click(function (e) {
+            // on récupère le token depuis le localStorage
+            let tk = localStorage.getItem("token");
+            e.preventDefault();
+            $.ajax({
+                url: 'http://localhost:8080/user/' + tk,
+                type: 'DELETE',
+                data: {
+                    token: tk
+                }
+            }).done(function (data) {
+                console.log('Logged out!')
+                window.location.href = 'index.html';
+            })
+        })
+    }
+    )();
+</script>
+
+<script>
+    function dateBDDToDateForm(date) {
+        return date.split('T')[0]
+    }
+</script>
+
+</html>
